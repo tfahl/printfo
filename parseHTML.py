@@ -13,7 +13,9 @@ def write_file(data):
 soup = BeautifulSoup(open("test/test.html"))
 res =  soup.find('span',{'class':'hpConsumableBlockHeaderText'}).text
 num = res[24] + res[25]
+if res[26] == '0':
+	num = num + res[26]
 
 write_file(num)
-
+print num
 file.close()
