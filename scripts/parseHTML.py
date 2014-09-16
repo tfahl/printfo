@@ -1,7 +1,10 @@
 from bs4 import BeautifulSoup
-dir = '../test/'
 
-file = open(dir + 'data.csv', 'w+')
+dir = '../printer_sources/'
+
+j = 1
+i = str(j)
+file = open('../data/data' + i + '.csv', 'w+')
 
 def write_file(data):
 	file.write(data + ",")
@@ -11,11 +14,11 @@ def write_file(data):
 #uses beautiful soup to parse html file
 #finds the correct span tag
 #Gets the percentage of ink left in the printer
-soup = BeautifulSoup(open(dir + 'test.html'))
+soup = BeautifulSoup(open(dir + 'html/dirtest.html'))
 res =  soup.find('span',{'class':'hpConsumableBlockHeaderText'}).text
-num = res[24] + res[25]
-if res[26] == '0':
-	num = num + res[26]
+num = res[23] + res[24]
+if res[25] == '0':
+	num = num + res[25]
 
 write_file(num)
 file.close()
