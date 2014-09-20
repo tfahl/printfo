@@ -18,3 +18,4 @@ So Far
 * Needs to handle other levels beside black toner
 * Writes percentage of Black Toner to a csv file
 * Need to automate copying files from osu engr to local server
+* Need to handle Richo and other printers
